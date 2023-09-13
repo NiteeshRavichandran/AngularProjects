@@ -1,0 +1,35 @@
+<div class="login-container">
+  <img
+    class="roll"
+    src="https://th.bing.com/th/id/R.eadbc9c59733bd245542a678f749b30e?rik=phtmerUqxCMLUw&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2f7Ta%2fKyb%2f7TaKybXXc.png&ehk=JxzfW%2bj1ENP3Z6b1q0q2V2%2bLZ6WaiTHU7IFxOEKNSyk%3d&risl=&pid=ImgRaw&r=0"
+    alt="film"
+  />
+  <div class="logo">Must Watch</div>
+  <div class="desc">
+    This is a movie review app. You can find your MUST WATCH movies in this
+    site. You can also provide rating and reviews to others intrested to watch
+    this movie.
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login-form">
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text"
+         id="username"
+         formControlName="username"
+         class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" 
+        id="password" 
+        formControlName="password"
+        class="form-control" />
+      </div>
+
+      <div class="btn-container">
+        <button class="btn btn-dark" type="submit">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
