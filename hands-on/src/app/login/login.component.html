@@ -11,13 +11,27 @@
     this movie.
   </div>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="login-form"
+    [ngStyle]="{'height': (!loginForm.get('username')?.valid && 
+                           loginForm.get('username')?.touched && 
+                           !loginForm.get('password')?.valid && 
+                           loginForm.get('password')?.touched) ? '320px' : 'auto'}"]> -->
+
     <div class="login-form">
+     <!-- [ngStyle]="{'height': (!loginForm.get('username')?.valid &&
+                            loginForm.get('username')?.touched &&
+                            !loginForm.get('password')?.valid &&
+                            loginForm.get('password')?.touched) ? 'auto' : 'auto'}"> -->
+
       <div class="form-group">
         <label for="username">User Name</label>
         <input type="text"
          id="username"
          formControlName="username"
          class="form-control" />
+         <span 
+         *ngIf="!loginForm.get('username')?.valid && loginForm.get('username')?.touched"
+         class="help-block">Please Enter a valid UserName!</span>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
@@ -25,10 +39,15 @@
         id="password" 
         formControlName="password"
         class="form-control" />
+        <span 
+         *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched"
+         class="help-block">Please Enter a valid Password!</span>
       </div>
-
       <div class="btn-container">
         <button class="btn btn-dark" type="submit">Login</button>
+        <!-- <span 
+         *ngIf="!loginForm?.valid && loginForm?.touched"
+         class="help-block">Please Enter valid Credentials!</span> -->
       </div>
     </div>
   </form>
