@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MovieComponent } from './movie/movie.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './auth.service';
+import { AuthGuardService } from './auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

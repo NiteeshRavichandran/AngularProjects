@@ -10,7 +10,7 @@
     site. You can also provide rating and reviews to others intrested to watch
     this movie.
   </div>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (submit)="onSubmit()">
     <!-- <div class="login-form"
     [ngStyle]="{'height': (!loginForm.get('username')?.valid && 
                            loginForm.get('username')?.touched && 
@@ -45,6 +45,8 @@
       </div>
       <div class="btn-container">
         <button class="btn btn-dark" type="submit">Login</button>
+        <button class="btn btn-dark" (click)="homepage()">home</button>
+        <button class="btn btn-dark" (click)="moviepage()">movie</button>
         <!-- <span 
          *ngIf="!loginForm?.valid && loginForm?.touched"
          class="help-block">Please Enter valid Credentials!</span> -->
@@ -52,3 +54,4 @@
     </div>
   </form>
 </div>
+ 
